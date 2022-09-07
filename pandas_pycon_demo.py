@@ -4,7 +4,7 @@
 import datetime
 
 import pandas as pd
-from pandas_datareader import data
+from pandas_datareader import data  # pip install pandas-datareader
 from pandas import Series
 
 import matplotlib.pyplot as plt
