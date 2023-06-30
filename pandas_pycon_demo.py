@@ -2,6 +2,7 @@
 # https://nbviewer.ipython.org/github/twiecki/financial-analysis-python-tutorial/blob/master/1.%20Pandas%20Basics.ipynb
 # With the consent of the original author, by Thomas Wiecki
 import datetime
+import scipy
 
 import pandas as pd
 from pandas_datareader import data  # pip install pandas-datareader
@@ -9,6 +10,11 @@ from pandas import Series
 
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+
+# yahoo changed their response format hence this workaround for pandas_datareader
+import yfinance as yfin
+yfin.pdr_override()
+
 
 mpl.rc('figure', figsize=(8, 7))
 
@@ -82,3 +88,5 @@ plt.show()
 # even more fancy chart
 plot2 = pd.plotting.scatter_matrix(rets, diagonal='kde', figsize=(10, 10))
 plt.show()
+
+pass
